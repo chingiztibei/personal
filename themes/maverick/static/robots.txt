@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://chingiztibei.com/sitemap.xml
