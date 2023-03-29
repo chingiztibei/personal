@@ -1,8 +1,9 @@
-baseURL = 'http://chingiztibei.com/'
+baseURL = 'http://chingiztibei.com'
 languageCode = 'ru-RU'
 title = 'Чингиз Тибэй'
 theme = 'maverick'
 paginate = 5
+relativeURLs = true
 
 [permalinks]
   pages = "/:slug"
@@ -16,13 +17,12 @@ paginate = 5
   [[menu.main]]
     identifier = "about"
     name = "Обо мне"
-    url = "http://chingiztibei.com/about/"
+    url = "/about/"
     weight = "-110"
   [[menu.main]]
     identifier = "posts"
     name = "Блог"
     url = "/posts/"
-    relativeURLs = true
     weight = -200
 
 [markup]
