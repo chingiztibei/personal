@@ -16,12 +16,13 @@ paginate = 5
   [[menu.main]]
     identifier = "about"
     name = "Обо мне"
-    url = "/about/"
+    url = "http://chingiztibei.com/about/"
     weight = "-110"
   [[menu.main]]
     identifier = "posts"
     name = "Блог"
     url = "/posts/"
+    relativeURLs = true
     weight = -200
 
 [markup]
