@@ -1,9 +1,13 @@
 baseURL = 'http://chingiztibei.com'
+relativeURLs = true
 languageCode = 'ru-RU'
+defaultContentLanguage = "ru"
+defaultContentLang = "ru"
 title = 'Чингиз Тибэй'
 theme = 'maverick'
 paginate = 5
-relativeURLs = true
+enableRobotsTXT = true
+googleAnalytics = 'UA-83734662-1'
 
 [permalinks]
   pages = "/:slug"

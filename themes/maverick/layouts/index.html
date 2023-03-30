@@ -7,12 +7,13 @@
     <div class="content">
       {{ partial "header.html" . }}
       {{ .Content }}
+      <br />
       {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
       <b>Последние записи</b>
       <section>
-        {{ range (first 5 (where .Site.RegularPages "Section" "posts" ).ByDate.Reverse) }}
+        {{ range (first 3 (where .Site.RegularPages "Section" "posts" ).ByDate.Reverse) }}
           <p>
-            <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>&nbsp;
+            <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "02.01.06" .Date | humanize }}</time>&nbsp;&nbsp;&nbsp;
             <a href="{{ .Permalink }}">{{ .Title }}</a>
           <p>
         {{ end }}

@@ -1,3 +1,5 @@
 User-agent: *
-Disallow:
+{{ range .Pages }}
+Disallow: {{ .RelPermalink }}
+{{ end }}
 Sitemap: https://chingiztibei.com/sitemap.xml

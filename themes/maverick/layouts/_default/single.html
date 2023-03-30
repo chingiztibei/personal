@@ -10,11 +10,13 @@
           <h2 class="post">{{ .Title }}</h2>
           {{ .Content }} {{ if eq .Section "posts" }}
           <div class="post-date">
-            <span class="g time">{{.Date.Format "January 2, 2006"}} </span>
+            <span class="g time">
+              {{ time.Format "2 January, 2006" .Date | humanize }}
+            </span>
             · {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
             $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
             $taxonomy $tag) -}}
-            <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
+            <i><a href="{{ .Permalink }}">{{ $tag | urlize | humanize }}</a></i>
             {{- end -}} {{- end -}} {{ end }}
           </div>
           {{ end }}
