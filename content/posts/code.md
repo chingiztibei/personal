@@ -6,6 +6,7 @@ url: /artifacts/code
 date: "2019-10-21"
 tags: 
 - Artifacts
+draft: true
 ---
 
 Свод указаний, но не жёстких законов.

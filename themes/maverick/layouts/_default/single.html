@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
-  {{ partial "head.html" . }}
-  <body>
-    <a class="skip-link" href="#main">Skip to main</a>
-    <main id="main">
-      <div class="content">
-        {{ partial "header.html" . }}
-        <section>
-          <h2 class="post">{{ .Title }}</h2>
-          {{ .Content }} {{ if eq .Section "posts" }}
-          <div class="post-date">
-            <span class="g time">
-              {{ time.Format "2 January, 2006" .Date | humanize }}
-            </span>
-            · {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
-            $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
-            $taxonomy $tag) -}}
-            <i><a href="{{ .Permalink }}">{{ $tag | urlize | humanize }}</a></i>
-            {{- end -}} {{- end -}} {{ end }}
-          </div>
-          {{ end }}
-        </section>
-        {{ if eq .Section "posts" }}
-        <div id="comments">
-          {{ partial "comments.html" $ }}
+{{ partial "head.html" . }}
+
+<body>
+  <main id="main">
+    <div class="content">
+      {{ partial "header.html" . }}
+      <section>
+        <h2 class="post">{{ .Title }}</h2>
+
+        {{ .Content }} {{ if eq .Section "posts" }}
+        <div class="clearfix"></div>
+        <div class="post-date center">
+          Опубликовано 
+          <span class="g time">
+            {{ time.Format "2 January, 2006" .Date | humanize }}
+          </span>
+          в разделе {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
+          $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
+          $taxonomy $tag) -}}
+          <i><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i>
+          {{- end -}} {{- end -}} {{ end }}
         </div>
         {{ end }}
+      </section>
+
+      {{ if eq .Section "posts" }}
+      <div id="comments">
+        {{ partial "comments.html" $ }}
       </div>
-    </main>
-  </body>
+      {{ end }}
+
+    </div>
+  </main>
+</body>
+
 </html>

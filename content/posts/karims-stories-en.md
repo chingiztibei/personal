@@ -6,6 +6,7 @@ url: /artifacts/karims-stories-en
 date: "2015-08-13"
 tags: 
 - Artifacts
+draft: true
 ---
 
 A 500-character story written for one literary contest.

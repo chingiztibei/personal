@@ -2,12 +2,12 @@ baseURL = 'http://chingiztibei.com'
 relativeURLs = true
 languageCode = 'ru-RU'
 defaultContentLanguage = "ru"
-defaultContentLang = "ru"
 title = 'Чингиз Тибэй'
 theme = 'maverick'
-paginate = 5
 enableRobotsTXT = true
 googleAnalytics = 'UA-83734662-1'
+
+staticDir = ['static']
 
 [permalinks]
   pages = "/:slug"
@@ -16,6 +16,8 @@ googleAnalytics = 'UA-83734662-1'
   logo = '/assets/favicon.ico'
   description = "Саможит, коферайтер и синефил. Живу, пишу, фотографирую и делаю свой любимый кофе в Алматы."
   author = 'Чингиз Тибэй'
+  customtextFontFamily = ""
+  customheadingFontFamily = "Betmo"
 
 [menu]
   [[menu.main]]
