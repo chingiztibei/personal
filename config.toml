@@ -1,13 +1,25 @@
 baseURL = 'http://chingiztibei.com'
 relativeURLs = true
 languageCode = 'ru-RU'
-defaultContentLanguage = "ru"
 title = 'Чингиз Тибэй'
 theme = 'maverick'
 enableRobotsTXT = true
 googleAnalytics = 'UA-83734662-1'
 
 staticDir = ['static']
+
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.ru]
+    languageName = "Русский"
+    weight = 1
+    dateFormat = "02 янв, 2006"
+    timeFormat = "15:04"
+    [languages.ru.params]
+      someParam = "Значение параметра на русском"
+
 
 [permalinks]
   pages = "/:slug"

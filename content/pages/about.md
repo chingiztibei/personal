@@ -12,9 +12,9 @@ url: /about
 Мое творчество&nbsp;&mdash; отражение моего опыта. Стремлюсь создавать истории, которые заставляют что-то чувствовать. И&nbsp;не&nbsp;только в&nbsp;словах&nbsp;&mdash; некоторые истории лучше раскрываются через визуальные образы, свет, цвет, композицию. Из&nbsp;визуальных способов повествования люблю фотографию. Провожу обучающие классы, чтобы помочь и&nbsp;другим найти свой способ рассказывать истории.
 
 Меня можно поддержать разными способами: 
-- почитать <a href="https://www.litres.ru/author/chingiz-tibey/" target="_blank">мои книги</a> и&nbsp;<a href="https://t.me/stitre" target="_blank">поделиться своим мнением</a>
-- приобрести <a href="https://www.shutterstock.com/g/chingiztibei" target="_blank">мои фотографии и&nbsp;иллюстрации</a>
-- подписаться <a href="https://www.youtube.com/@chingiztibei/featured" target="_blank">в&nbsp;YouTube</a> или <a href="https://www.instagram.com/chingiztibei/" target="_blank">в&nbsp;Instagram</a>
+- почитать <a class="link" href="https://www.litres.ru/author/chingiz-tibey/" target="_blank">мои книги</a> и&nbsp;<a class="link" href="https://t.me/stitre" target="_blank">поделиться своим мнением</a>
+- приобрести <a class="link" href="https://www.shutterstock.com/g/chingiztibei" target="_blank">мои фотографии и&nbsp;иллюстрации</a>
+- подписаться <a class="link" href="https://www.youtube.com/@chingiztibei/featured" target="_blank">в&nbsp;YouTube</a> или <a class="link" href="https://www.instagram.com/chingiztibei/" target="_blank">в&nbsp;Instagram</a>
 
 Кроме того, я&nbsp;являюсь со-основателем <a href="http://tinystudio.art" target="_blank">небольшой студии</a>, которая занимается дизайном и&nbsp;ноу-код разработкой. Могу быть полезен, если потребуется помощь:
 - в&nbsp;пользовательских исследованиях&nbsp;&mdash; UX, CX, CustDev

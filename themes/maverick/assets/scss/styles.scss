@@ -92,12 +92,15 @@ footer {
 footer p {
     max-width: 100%;
     color: #999;
+    font-size: .9em;
+    line-height: 1.5;
 }
 
 a {
     position: relative;
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a::before {
@@ -113,6 +116,18 @@ a::before {
 
 a:hover::before {
     width: 100%;
+}
+
+a.link {
+    border-bottom: 1px dotted #ccc;
+}
+
+a.link::before {
+    height: 0;
+}
+
+a.link:hover {
+    border-bottom: 1px dotted #111111;
 }
 
 ul,
@@ -221,7 +236,7 @@ strong {
     position: relative;
     text-decoration: none;
 }
-      
+
 b::before,
 strong::before {
     content: '';
@@ -240,18 +255,6 @@ strong::before {
     color: #31708f;
 }
 
-pre {
-    padding: .5rem;
-    overflow: auto;
-    overflow-x: scroll;
-    overflow-wrap: normal;
-}
-
-code {
-    margin: .1rem;
-    border: none;
-}
-
 ul {
     list-style-type: square;
 }
@@ -259,10 +262,6 @@ ul {
 ul,
 ol {
     padding-left: 1.2rem;
-}
-
-.meta {
-    color: #777
 }
 
 .content {
@@ -286,6 +285,55 @@ img {
 .post-date {
     font-size: .9rem;
     margin: 6rem auto;
+}
+
+.posts {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.posts > a {
+    flex: 1;
+}
+
+.card {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    padding: 1em;
+}
+
+.posts > :nth-of-type(1) {
+    border-right: 1px dotted #ccc;
+    margin-right: 1em;
+}
+
+.posts > :nth-of-type(2) {
+    border-right: 1px dotted #ccc;
+    margin-right: 1em;
+}
+
+.card > p:first-of-type {
+    text-transform: uppercase;
+}
+
+.all {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    padding: 1em 0;
+}
+
+.small {
+    font-size: .8em;
+}
+
+.mute {
+    opacity: .75;
 }
 
 .tags {
@@ -338,6 +386,25 @@ img {
     .container {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .posts {
+        flex-direction: column;
+    }
+
+    .posts > :nth-of-type(1) {
+        border-right: none;
+        margin-right: 0;
+        border-bottom: 1px dotted #ccc;
+        margin-bottom: 1em;
+    }
+    
+    .posts > :nth-of-type(2) {
+        border-right: none;
+        margin-right: 0;
+        border-bottom: 1px dotted #ccc;
+        margin-bottom: 1em;
+    }
+    
 }
 
 @keyframes opacity {

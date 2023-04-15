@@ -1,40 +1,41 @@
 <!doctype html>
 <html lang="ru">
 {{ partial "head.html" . }}
-  <body>
-    <main id="main">
-      <div class="content">
-        {{ partial "header.html" . }}
 
+<body>
+  <main id="main">
+    <div class="content">
+      {{ partial "header.html" . }}
+      <div class="wide">
         {{ .Content }}
-
         {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
-
-        <h3>Последние записи</h3>
-
-        <section>
-          <div class="container">
-
-            {{ range (first 6 (where .Site.RegularPages "Section" "posts" ).ByDate.Reverse) }}
-
-            <p>
-              <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "01.06" .Date |
-                humanize
-                }}</time>&nbsp;
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </p>
-
-            {{ end }}
-          
-          </div>
-        </section>
-
-        {{ end }}
-
       </div>
+      <h3>Последние записи</h3>
+      <section>
+        <div class="posts">
+          {{ range first 3 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+          <a href="{{ .Permalink }}">
+            <div class="card">
+              <p>{{ .Title }}</p>
+              <p class="small">{{ .Date.Format "01.06" }} {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
+                $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
+                $taxonomy $tag) -}}
+                <i>#{{ $tag | humanize }}</i>
+                {{- end -}} {{- end -}} {{ end }}
+              </p>
+              <p>{{ .Description }}</p>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+        <div class="all mute"><a href="/posts/">Все записи</a></div>
+      </section>
+      {{ end }}
+    </div>
 
-      {{ partial "footer.html" . }}
-      
-    </main>
-  </body>
+    {{ partial "footer.html" . }}
+
+  </main>
+</body>
+
 </html>
