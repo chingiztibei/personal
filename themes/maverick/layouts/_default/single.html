@@ -12,7 +12,7 @@
         {{ .Content }} {{ if eq .Section "posts" }}
         <div class="clearfix"></div>
         <div class="post-date center">
-          Опубликовано 
+          Опубликовано
           <span class="g time">
             {{ time.Format "2 January, 2006" .Date | humanize }}
           </span>
@@ -22,15 +22,23 @@
           <i><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i>
           {{- end -}} {{- end -}} {{ end }}
         </div>
-        {{ end }}
+        
       </section>
 
-      {{ if eq .Section "posts" }}
-      <div id="comments">
-        {{ partial "comments.html" $ }}
+      <div class="posts index">
+        {{ if .Prev }}
+          <a href="{{ .Prev.Permalink }}">
+            <div class="card left"><span class="hidden-sm">←</span> {{ .Prev.Title }}</div>
+          </a>
+        {{ end }}
+        {{ if .Next }}
+          <a href="{{ .Next.Permalink }}">
+            <div class="card right">{{ .Next.Title }} <span class="hidden-sm">→</span></div>
+          </a>
+        {{ end }}
       </div>
+      <div class="all mute"><a href="/posts/">Все записи</a></div>
       {{ end }}
-
     </div>
     {{ partial "footer.html" . }}
   </main>

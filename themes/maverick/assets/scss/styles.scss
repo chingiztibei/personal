@@ -295,6 +295,12 @@ img {
 
 .posts > a {
     flex: 1;
+    opacity: .75;
+}
+
+.posts > a:hover {
+    flex: 1;
+    opacity: 1;
 }
 
 .card {
@@ -304,18 +310,32 @@ img {
     padding: 1em;
 }
 
-.posts > :nth-of-type(1) {
+.posts > :nth-of-type(1),
+.posts.index > :nth-of-type(1) {
     border-right: 1px dotted #ccc;
     margin-right: 1em;
 }
 
-.posts > :nth-of-type(2) {
+.posts > :last-child {
+    border-right: 0;
+    margin-right: 0;
+}
+
+.posts > :not(:last-child):nth-of-type(2) {
     border-right: 1px dotted #ccc;
     margin-right: 1em;
-}
+}   
 
 .card > p:first-of-type {
     text-transform: uppercase;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
 }
 
 .all {
@@ -390,6 +410,10 @@ img {
     .posts {
         flex-direction: column;
     }
+   
+    .posts.index {
+        flex-direction: row;
+    }
 
     .posts > :nth-of-type(1) {
         border-right: none;
@@ -403,6 +427,24 @@ img {
         margin-right: 0;
         border-bottom: 1px dotted #ccc;
         margin-bottom: 1em;
+    }
+
+    .posts.index > :nth-of-type(1) {
+        border-right: 1px dotted #ccc;
+        margin-right: 1em;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    
+    .posts.index > :nth-of-type(2) {
+        border-right: 0;
+        margin-right: 0;
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .hidden-sm {
+        display: none;
     }
     
 }
