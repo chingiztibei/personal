@@ -293,12 +293,12 @@ img {
     overflow: hidden;
 }
 
-.posts > a {
+.posts>a {
     flex: 1;
     opacity: .75;
 }
 
-.posts > a:hover {
+.posts>a:hover {
     flex: 1;
     opacity: 1;
 }
@@ -310,23 +310,23 @@ img {
     padding: 1em;
 }
 
-.posts > :nth-of-type(1),
-.posts.index > :nth-of-type(1) {
+.posts> :nth-of-type(1),
+.posts.index> :nth-of-type(1) {
     border-right: 1px dotted #ccc;
     margin-right: 1em;
 }
 
-.posts > :last-child {
+.posts> :last-child {
     border-right: 0;
     margin-right: 0;
 }
 
-.posts > :not(:last-child):nth-of-type(2) {
+.posts> :not(:last-child):nth-of-type(2) {
     border-right: 1px dotted #ccc;
     margin-right: 1em;
-}   
+}
 
-.card > p:first-of-type {
+.card>p:first-of-type {
     text-transform: uppercase;
 }
 
@@ -410,43 +410,48 @@ img {
     .posts {
         flex-direction: column;
     }
-   
+
     .posts.index {
         flex-direction: row;
     }
 
-    .posts > :nth-of-type(1) {
-        border-right: none;
-        margin-right: 0;
-        border-bottom: 1px dotted #ccc;
-        margin-bottom: 1em;
-    }
-    
-    .posts > :nth-of-type(2) {
+    .posts> :nth-of-type(1) {
         border-right: none;
         margin-right: 0;
         border-bottom: 1px dotted #ccc;
         margin-bottom: 1em;
     }
 
-    .posts.index > :nth-of-type(1) {
+    .posts> :nth-of-type(2) {
+        border-right: none;
+        margin-right: 0;
+        border-bottom: 1px dotted #ccc;
+        margin-bottom: 1em;
+    }
+
+    .posts.index> :nth-of-type(1) {
         border-right: 1px dotted #ccc;
         margin-right: 1em;
         border-bottom: none;
         margin-bottom: 0;
     }
-    
-    .posts.index > :nth-of-type(2) {
+
+    .posts.index> :nth-of-type(2) {
         border-right: 0;
         margin-right: 0;
         border-bottom: 0;
         margin-bottom: 0;
     }
 
+    .posts> :not(:last-child):nth-of-type(2) {
+        border-right: 0;
+        margin-right: 0;
+    }
+
     .hidden-sm {
         display: none;
     }
-    
+
 }
 
 @keyframes opacity {
