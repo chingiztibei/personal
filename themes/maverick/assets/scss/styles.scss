@@ -392,6 +392,10 @@ img {
     text-align: center;
 }
 
+.list-none {
+    list-style: none;
+}
+
 @media (max-width: 500px) {
     .list a {
         white-space: normal;
