@@ -1,6 +1,6 @@
 ---
 title: "Zoloto"
-description: "Краткие итоги за отчетный период"
+description: "Путь героя на примере одного концерта"
 author: "Чингиз Тибэй"
 url: /artifacts/zoloto
 date: "2022-12-16"

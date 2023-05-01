@@ -22,19 +22,19 @@
           <i><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i>
           {{- end -}} {{- end -}} {{ end }}
         </div>
-        
+
       </section>
 
       <div class="posts index">
         {{ if .Prev }}
-          <a href="{{ .Prev.Permalink }}">
-            <div class="card left"><span class="hidden-sm">←</span> {{ .Prev.Title }}</div>
-          </a>
+        <a href="{{ .Prev.Permalink }}">
+          <div class="card left"><span class="hidden-sm">←</span> {{ .Prev.Title }}</div>
+        </a>
         {{ end }}
         {{ if .Next }}
-          <a href="{{ .Next.Permalink }}">
-            <div class="card right">{{ .Next.Title }} <span class="hidden-sm">→</span></div>
-          </a>
+        <a href="{{ .Next.Permalink }}">
+          <div class="card right">{{ .Next.Title }} <span class="hidden-sm">→</span></div>
+        </a>
         {{ end }}
       </div>
       <div class="all mute"><a href="/posts/">Все записи</a></div>
@@ -42,6 +42,9 @@
     </div>
     {{ partial "footer.html" . }}
   </main>
+
+  {{ $collectionID := .Params.collectionID }}
+
 </body>
 
 </html>
