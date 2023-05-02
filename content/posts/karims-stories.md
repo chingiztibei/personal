@@ -8,7 +8,7 @@ tags:
 - Artifacts
 ---
 
-<div class="wide">
+<div class="auto">
 
 История в&nbsp;500&nbsp;символов, написанная для одного литературного конкурса. 
 

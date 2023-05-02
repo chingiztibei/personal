@@ -8,7 +8,6 @@
       {{ partial "header.html" . }}
       <section>
         <h2 class="post">{{ .Title }}</h2>
-
         {{ .Content }} {{ if eq .Section "posts" }}
         <div class="clearfix"></div>
         <div class="post-date center">
@@ -22,7 +21,6 @@
           <i><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i>
           {{- end -}} {{- end -}} {{ end }}
         </div>
-
       </section>
 
       <div class="posts index">

@@ -33,15 +33,10 @@ defaultContentLanguageInSubdir = true
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name = "Обо мне"
-    url = "/about/"
-    weight = "-110"
-  [[menu.main]]
     identifier = "posts"
-    name = "Блог"
+    name = "Содержание"
     url = "/posts/"
-    weight = -200
+    weight = -100
 
 [markup]
   [markup.goldmark.renderer]

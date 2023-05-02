@@ -8,7 +8,7 @@ tags:
 - Artifacts
 ---
 
-<div class="wide">
+<div class="auto">
 
 Как составить плейлист, который не&nbsp;стыдно кому-то подарить.
 
@@ -52,5 +52,5 @@ tags:
 P.S. Вдохновившись правилами и&nbsp;советами Роб, я&nbsp;на&nbsp;свой день рождения составил плейлист, в&nbsp;который вошли по&nbsp;одной &laquo;главной&raquo; песне за&nbsp;каждый прожитый мной год. Этот сборник дался мне нелегко и&nbsp;где-то все еще валяется парочка плейлистов с&nbsp;отвергнутыми пробными вариантами.
 
 </div>
-
+<br />
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/kz/playlist/quintessence-19/pl.u-qxylK05C0gvjdk?theme=light"></iframe>

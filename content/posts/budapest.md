@@ -8,7 +8,7 @@ tags:
 - Travel
 ---
 
-<div class="wide">
+<div class="auto">
 
 Конспект города. Коротко о&nbsp;главном.
 

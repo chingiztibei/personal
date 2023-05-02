@@ -6,10 +6,9 @@
   <main id="main">
     <div class="content">
       {{ partial "header.html" . }}
-      <div class="wide">
-        {{ .Content }}
-        {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
-      </div>
+      <div style="margin-top: 6em"></div>
+      {{ .Content }}
+      {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
       <h3>Последние записи</h3>
       <section>
         <div class="posts">
@@ -28,7 +27,7 @@
           </a>
           {{ end }}
         </div>
-        <div class="all mute"><a href="/posts/">Все записи</a></div>
+        <div class="all"><a href="/posts/">Все записи</a></div>
       </section>
       {{ end }}
     </div>

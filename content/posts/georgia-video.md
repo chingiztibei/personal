@@ -10,4 +10,8 @@ tags:
 
 Одноминутные видео по&nbsp;Грузии. Видео артефакты путешествия: 10&nbsp;дней по&nbsp;минуте на&nbsp;каждый день.
 
-<br /><iframe width="100%" height="360" src="https://www.youtube.com/embed/videoseries?list=PLdNkYNwuf1pxkn5toAyjRkS1sLXCQIw7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="auto">
+<br />
+<iframe width="100%" height="360" src="https://www.youtube.com/embed/videoseries?list=PLdNkYNwuf1pxkn5toAyjRkS1sLXCQIw7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>

@@ -9,7 +9,7 @@ tags:
 collectionID: yHGqXcRcuik
 ---
 
-<div class="wide">
+<div class="auto">
 
 Конспект города. Коротко о&nbsp;главном.
 
@@ -21,9 +21,7 @@ collectionID: yHGqXcRcuik
 
 В&nbsp;Вене есть &laquo;турецкая&raquo; часть города, где квартиру мне сдает итальянка. Ее&nbsp;происхождение с&nbsp;головой выдает наличие кофе-машины (на&nbsp;самом деле, двух), книжки с&nbsp;итальянскими рецептами и&nbsp;очень плохой английский.
 
-<div class="wide">
-    <div class="masonry-container">
-    </div>
+<div class="masonry-container">
 </div>
 
 Старик стоит за&nbsp;прилавком. За&nbsp;его грустной улыбкой&nbsp;&mdash; воспоминание о&nbsp;погибшей жене. Об&nbsp;ее&nbsp;страсти к&nbsp;пленочной, уходящей культуре. В&nbsp;его глазах глубокая печаль и&nbsp;тоска по&nbsp;ней. Заряжая мой фотоаппарат пленкой, он&nbsp;вспоминает о&nbsp;том, как делал это для нее.

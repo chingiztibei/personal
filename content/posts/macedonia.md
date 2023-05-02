@@ -8,7 +8,7 @@ tags:
 - Travel
 ---
 
-<div class="wide">
+<div class="auto">
 
 Конспект страны. Коротко о&nbsp;главном.
 
