@@ -6,7 +6,6 @@ url: /travel/wien
 date: "2018-06-03"
 tags: 
 - Travel
-collectionID: yHGqXcRcuik
 ---
 
 <div class="auto">
@@ -17,12 +16,12 @@ collectionID: yHGqXcRcuik
 
 Вена создает ощущение немецкого пригорода. Здесь все говорят на&nbsp;немецком и&nbsp;полностью доверяют друг другу. Например, в&nbsp;метро турникеты не&nbsp;огорожены ничем&nbsp;&mdash; нет никаких преград для того, чтобы пройти. Но&nbsp;есть подозрение, что если ты&nbsp;только подумаешь о&nbsp;том, чтобы нарушить закон, кто-то тебя сразу&nbsp;же сдаст. На&nbsp;самом деле, за&nbsp;тобой уже выехали.
 
-#### ~~~
+<div class="masonry-container">
+</div>
 
 В&nbsp;Вене есть &laquo;турецкая&raquo; часть города, где квартиру мне сдает итальянка. Ее&nbsp;происхождение с&nbsp;головой выдает наличие кофе-машины (на&nbsp;самом деле, двух), книжки с&nbsp;итальянскими рецептами и&nbsp;очень плохой английский.
 
-<div class="masonry-container">
-</div>
+#### ~~~
 
 Старик стоит за&nbsp;прилавком. За&nbsp;его грустной улыбкой&nbsp;&mdash; воспоминание о&nbsp;погибшей жене. Об&nbsp;ее&nbsp;страсти к&nbsp;пленочной, уходящей культуре. В&nbsp;его глазах глубокая печаль и&nbsp;тоска по&nbsp;ней. Заряжая мой фотоаппарат пленкой, он&nbsp;вспоминает о&nbsp;том, как делал это для нее.
 
@@ -53,3 +52,33 @@ collectionID: yHGqXcRcuik
 Некоторые обходили музей по&nbsp;несколько раз, чтобы найти их&nbsp;все.
 
 </div>
+
+<script>
+  const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
+  const collectionID = 'yHGqXcRcuik';
+
+  const grid = document.querySelector('.masonry-container');
+
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(photo => {
+              const gridItem = document.createElement('div');
+              gridItem.classList.add('masonry-item');
+
+              const link = document.createElement('a');
+              link.href = photo.links.html;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+
+              const img = document.createElement('img');
+              img.src = photo.urls.regular;
+              img.alt = photo.alt_description;
+
+              link.appendChild(img);
+              gridItem.appendChild(link);
+              grid.appendChild(gridItem);
+          });
+      })
+      .catch(error => console.log(error));
+</script>

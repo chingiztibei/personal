@@ -16,7 +16,8 @@ tags:
 
 Будапешт встретил невыгодным курсом, около нулевой температурой и&nbsp;мрачной архитектурой. Пришлось пройти квест, чтобы попасть в&nbsp;квартиру: хозяин хранил ключи в&nbsp;почтовом ящике, который открывался специальным паролем; пароль вводился в&nbsp;одном месте, а&nbsp;ящик открывался&nbsp;&mdash; в&nbsp;другом. За&nbsp;внешней дверью встретил коридор с&nbsp;новыми почтовыми ящиками, за&nbsp;которым оказался внутренний двор с&nbsp;мусорными баками и&nbsp;еще несколько дверей. Нужно было найти свою, а&nbsp;после понять порядок этажности&nbsp;&mdash; привычный для нас второй для них&nbsp;&mdash; первый. И&nbsp;понять какая&nbsp;же из&nbsp;квартир считается той, что напротив лифта, так как каждая из&nbsp;них выходит дверью на&nbsp;лифт. Понимая сложность квеста, хозяин квартиры записал видео. Но&nbsp;это не&nbsp;особо помогло. Иногда излишние объяснения путают. Это тот самый случай.
 
-#### ~~~
+<div class="masonry-container">
+</div>
 
 В&nbsp;квартирах с&nbsp;Airbnb хозяева умеют оформлять квартиры. Не&nbsp;все и&nbsp;не&nbsp;всегда, но&nbsp;на&nbsp;это можно посмотреть заранее. Не&nbsp;отрицая важность планировки, хочется заметить, что это и&nbsp;не&nbsp;самое важное. В&nbsp;большинстве случаев с&nbsp;любым косяком отлично справляется хорошо подобранная мебель. И&nbsp;тут я&nbsp;не&nbsp;против IKEA&nbsp;&mdash; проверено, удобно, просто.
 
@@ -89,3 +90,33 @@ tags:
 Самый вкусный штрудель на&nbsp;автовокзале Будапешта.
 
 </div>
+
+<script>
+  const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
+  const collectionID = '10lGFR_rvRY';
+
+  const grid = document.querySelector('.masonry-container');
+
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(photo => {
+              const gridItem = document.createElement('div');
+              gridItem.classList.add('masonry-item');
+
+              const link = document.createElement('a');
+              link.href = photo.links.html;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+
+              const img = document.createElement('img');
+              img.src = photo.urls.regular;
+              img.alt = photo.alt_description;
+
+              link.appendChild(img);
+              gridItem.appendChild(link);
+              grid.appendChild(gridItem);
+          });
+      })
+      .catch(error => console.log(error));
+</script>

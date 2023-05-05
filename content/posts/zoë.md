@@ -1,8 +1,8 @@
 ---
-title: "Идеальный плейлист от Зои Кравиц"
+title: "Идеальный плейлист от Зои Кравиц"
 description: "Как составить плейлист, который не стыдно кому-то подарить."
 author: "Чингиз Тибэй"
-url: /artifacts/playlist
+url: /artifacts/zoë
 date: "2017-06-08"
 tags: 
 - Artifacts

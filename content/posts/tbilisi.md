@@ -16,7 +16,8 @@ tags:
 
 Тбилиси удивительным образом сочетает в&nbsp;себе частички знакомых городов. Бродя по&nbsp;хитросплетениям улиц, оказываешься: в&nbsp;Алматы с&nbsp;грубой архитектурой, громкими и&nbsp;грязными трассами; в&nbsp;Барселоне с&nbsp;мощёнными камнем и&nbsp;узкими дворами; в&nbsp;Бостоне с&nbsp;краснокожими кирпичными домами с&nbsp;цветочными магазинами на&nbsp;первых этажах; в&nbsp;Неаполе с&nbsp;бельём, висячим между домов на&nbsp;веревке; в&nbsp;Стамбуле, полном уличных котов вдоль лестниц, на&nbsp;бордюрах и&nbsp;у&nbsp;калиток домов.
 
-#### ~~~
+<div class="masonry-container">
+</div>
 
 Тбилиси разный и&nbsp;каждому&nbsp;&mdash; своё. Тбилиси&nbsp;&mdash; город на&nbsp;стыке. Языков, культур, состояний. Европейское граничит с&nbsp;советским. Английский с&nbsp;русским. Улицы с&nbsp;вечным праздником на&nbsp;них параллельны улицам с&nbsp;попрошайками, гадалками, аферистами, бомжами, дерьмом на&nbsp;пути и&nbsp;запахом мочи в&nbsp;переходах.
 
@@ -57,3 +58,33 @@ tags:
 И&nbsp;да, #tbilisilovesyou
 
 </div>
+
+<script>
+  const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
+  const collectionID = 'SN3Id-fTrDI';
+
+  const grid = document.querySelector('.masonry-container');
+
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(photo => {
+              const gridItem = document.createElement('div');
+              gridItem.classList.add('masonry-item');
+
+              const link = document.createElement('a');
+              link.href = photo.links.html;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+
+              const img = document.createElement('img');
+              img.src = photo.urls.regular;
+              img.alt = photo.alt_description;
+
+              link.appendChild(img);
+              gridItem.appendChild(link);
+              grid.appendChild(gridItem);
+          });
+      })
+      .catch(error => console.log(error));
+</script>

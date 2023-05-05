@@ -1,5 +1,5 @@
 const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
-const collectionID = 'yHGqXcRcuik';
+const collectionID = '{{ $collectionID }}';
 
 const grid = document.querySelector('.masonry-container');
 

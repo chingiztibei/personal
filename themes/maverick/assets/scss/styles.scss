@@ -123,16 +123,14 @@ ul {
     padding: 0;
 }
 
+ol {
+    padding-left: 2em;
+}
+
 ul li {
     list-style: none;
     padding: 0;
-}
-
-ul li:before {
-    content: "-";
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    padding-left: 1em;
 }
 
 header ul li:before {
@@ -203,6 +201,20 @@ hr {
     overflow: hidden;
 }
 
+ul li:before {
+    content: "-";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.list li:before {
+    content: "";
+    display: block;
+    width: auto;
+    margin-left: -1em;
+}
+
 .list a {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -259,6 +271,7 @@ strong {
 .content {
     max-width: 70ch;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .columns {
