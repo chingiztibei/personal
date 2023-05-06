@@ -1,0 +1,55 @@
+User-agent: *
+
+Disallow: /
+
+Disallow: /posts/
+
+Disallow: /tags/
+
+Disallow: /tags/travel/
+
+Disallow: /travel/checklist/
+
+Disallow: /artifacts/zoloto/
+
+Disallow: /tags/artifacts/
+
+Disallow: /tags/books/
+
+Disallow: /books/cynics/
+
+Disallow: /travel/hacks/
+
+Disallow: /travel/rome/
+
+Disallow: /artifacts/q12022/
+
+Disallow: /books/top-5-2021/
+
+Disallow: /artifacts/2021/
+
+Disallow: /artifacts/2020/
+
+Disallow: /travel/georgia-video/
+
+Disallow: /books/myths/
+
+Disallow: /travel/wien/
+
+Disallow: /travel/budapest/
+
+Disallow: /travel/bratislava/
+
+Disallow: /artifacts/zo%C3%AB/
+
+Disallow: /books/innocence/
+
+Disallow: /travel/tbilisi/
+
+Disallow: /artifacts/karims-stories/
+
+Disallow: /travel/macedonia/
+
+Disallow: /about/
+
+Sitemap: https://chingiztibei.com/sitemap.xml

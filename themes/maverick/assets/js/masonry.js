@@ -3,7 +3,7 @@ const collectionID = '{{ $collectionID }}';
 
 const grid = document.querySelector('.masonry-container');
 
-fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
+fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}&per_page=30`)
     .then(response => response.json())
     .then(data => {
         data.forEach(photo => {

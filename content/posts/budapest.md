@@ -92,31 +92,49 @@ tags:
 </div>
 
 <script>
-  const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
-  const collectionID = '10lGFR_rvRY';
+const accessKey = 'EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M';
+const collectionID = '10lGFR_rvRY';
+const perPage = 30; // Set the number of photos to retrieve per page
+let currentPage = 1;
+let totalPages = 1;
 
-  const grid = document.querySelector('.masonry-container');
+const grid = document.querySelector('.masonry-container');
 
-  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
-      .then(response => response.json())
-      .then(data => {
-          data.forEach(photo => {
-              const gridItem = document.createElement('div');
-              gridItem.classList.add('masonry-item');
+function fetchPhotos() {
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}&per_page=${perPage}&page=${currentPage}`)
+    .then(response => response.json())
+    .then(data => {
+      // Append the photos to the grid
+      data.forEach(photo => {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('masonry-item');
 
-              const link = document.createElement('a');
-              link.href = photo.links.html;
-              link.target = '_blank';
-              link.rel = 'noopener noreferrer';
+        const link = document.createElement('a');
+        link.href = photo.links.html;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
 
-              const img = document.createElement('img');
-              img.src = photo.urls.regular;
-              img.alt = photo.alt_description;
+        const img = document.createElement('img');
+        img.src = photo.urls.regular;
+        img.alt = photo.alt_description;
 
-              link.appendChild(img);
-              gridItem.appendChild(link);
-              grid.appendChild(gridItem);
-          });
-      })
-      .catch(error => console.log(error));
+        link.appendChild(img);
+        gridItem.appendChild(link);
+        grid.appendChild(gridItem);
+      });
+
+      // Update pagination variables
+      totalPages = Math.ceil(data.total / perPage);
+      currentPage++;
+
+      // Fetch the next page of photos if there are more pages
+      if (currentPage <= totalPages) {
+        fetchPhotos();
+      }
+    })
+    .catch(error => console.log(error));
+}
+
+fetchPhotos();
+
 </script>
