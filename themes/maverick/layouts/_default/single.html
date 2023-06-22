@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
-{{ partial "head.html" . }}
+  {{ partial "head.html" . }}
 
-<body>
-  <main id="main">
-    <div class="content">
-      {{ partial "header.html" . }}
-      <section>
-        <h2 class="post">{{ .Title }}</h2>
-        {{ .Content }} {{ if eq .Section "posts" }}
-        <div class="clearfix"></div>
-        <div class="post-date center">
-          Опубликовано
-          <span class="g time">
-            {{ time.Format "2 January, 2006" .Date | humanize }}
-          </span>
-          в разделе {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
-          $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
-          $taxonomy $tag) -}}
-          <i><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i>
-          {{- end -}} {{- end -}} {{ end }}
+  <body>
+    <main id="main">
+      <div class="content">
+        {{ partial "header.html" . }}
+        <section>
+          <h2 class="post">{{ .Title }}</h2>
+          {{ .Content }} {{ if eq .Section "posts" }}
+          <div class="clearfix"></div>
+          <div class="post-date center">
+            Опубликовано {{ time.Format "2 January, 2006" .Date | humanize }} в
+            разделе {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{
+            range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
+            $taxonomy $tag) -}}
+            <i
+              ><a href="{{ .Permalink }}">#{{ $tag | urlize | humanize }}</a></i
+            >
+            {{- end -}} {{- end -}} {{ end }}
+            <br />
+            {{- if .Lastmod }} Обновлено {{ time.Format "2 January, 2006"
+            .Lastmod | humanize }} {{- end }}
+          </div>
+        </section>
+
+        <div class="posts index">
+          {{ if .Prev }}
+          <a href="{{ .Prev.Permalink }}">
+            <div class="card left">
+              <span class="hidden-sm">←</span> {{ .Prev.Title }}
+            </div>
+          </a>
+          {{ end }} {{ if .Next }}
+          <a href="{{ .Next.Permalink }}">
+            <div class="card right">
+              {{ .Next.Title }} <span class="hidden-sm">→</span>
+            </div>
+          </a>
+          {{ end }}
         </div>
-      </section>
-
-      <div class="posts index">
-        {{ if .Prev }}
-        <a href="{{ .Prev.Permalink }}">
-          <div class="card left"><span class="hidden-sm">←</span> {{ .Prev.Title }}</div>
-        </a>
-        {{ end }}
-        {{ if .Next }}
-        <a href="{{ .Next.Permalink }}">
-          <div class="card right">{{ .Next.Title }} <span class="hidden-sm">→</span></div>
-        </a>
+        <div class="all mute"><a href="/posts/">Все записи</a></div>
         {{ end }}
       </div>
-      <div class="all mute"><a href="/posts/">Все записи</a></div>
-      {{ end }}
-    </div>
-    {{ partial "footer.html" . }}
-  </main>
-
-</body>
-
+      {{ partial "footer.html" . }}
+    </main>
+  </body>
 </html>
