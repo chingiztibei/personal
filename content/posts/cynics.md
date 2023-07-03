@@ -1,5 +1,5 @@
 ---
-title: "Циники"
+title: "Циники. Роман о любви в переломное время"
 description: "Роман, в котором главы короче постов в твиттере"
 author: "Чингиз Тибэй"
 featured_image: /images/cynics/cynics.png

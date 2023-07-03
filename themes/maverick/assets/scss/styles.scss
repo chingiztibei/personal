@@ -129,7 +129,8 @@ h2 {
 
 h3 {
     font-size: 3em;
-    text-align: left;
+    margin-top: 2em;
+
 }
 
 h4 {
@@ -139,6 +140,7 @@ h4 {
     letter-spacing: .1em;
 }
 
+h3, 
 p,
 li {
     max-width: 48ch;
@@ -411,6 +413,7 @@ img {
     line-height: 1.25;
     font-weight: 700;
     display: block;
+    margin-bottom: .4em;
 }
 
 .special .text {
@@ -485,10 +488,12 @@ img {
     text-align: center;
 }
 
-.auto p {
+.auto p,
+.auto h3 {
     max-width: 100%;
     margin: auto;
     margin-bottom: .8em;
+    margin-top: 1em;
 }
 
 .none {
@@ -668,7 +673,8 @@ img {
         -moz-column-count: 2;
         column-count: 2;
     }
-    .auto p {
+    .auto p,
+    .auto h3 {
         max-width: 80%;
     }
 }
@@ -679,7 +685,8 @@ img {
         -moz-column-count: 3;
         column-count: 3;
     }
-    .auto p {
+    .auto p,
+    .auto h3 {
         max-width: 48%;
     }
 }
