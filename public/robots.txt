@@ -8,6 +8,8 @@ Disallow: /tags/
 
 Disallow: /tags/travel/
 
+Disallow: /travel/istanbul/
+
 Disallow: /travel/checklist/
 
 Disallow: /artifacts/zoloto/

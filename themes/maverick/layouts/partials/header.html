@@ -1,10 +1,13 @@
 <header>
 
-    <a href="/">
-      {{ .Site.Title }}
-    </a>
+  <a href="/" class="big-title">
+    {{ .Site.Title }}
+  </a>
 
   <ul style="padding: 0;margin: 0;">
+    <a href="/">
+      <img src="/images/logo.svg" class="logo">
+    </a>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
     <li class="{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
@@ -12,7 +15,5 @@
       {{ end }}
     </li>
   </ul>
-</style>
 
 </header>
-<hr>

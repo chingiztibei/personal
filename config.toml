@@ -1,7 +1,8 @@
 baseURL = 'http://chingiztibei.com'
 relativeURLs = true
 languageCode = 'ru-RU'
-title = 'Чингиз Тибэй'
+title = 'Тибэй'
+logotype = "/images/logo.svg"
 theme = 'maverick'
 enableRobotsTXT = true
 googleAnalytics = 'UA-83734662-1'
@@ -25,7 +26,7 @@ defaultContentLanguageInSubdir = true
   pages = "/:slug"
 
 [params]
-  logo = '/assets/favicon.ico'
+  logo = '/images/favicon.ico'
   description = "Саможит, коферайтер и синефил. Живу, пишу, фотографирую и делаю свой любимый кофе в Алматы."
   author = 'Чингиз Тибэй'
   customtextFontFamily = ""
@@ -33,10 +34,15 @@ defaultContentLanguageInSubdir = true
 
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "Содержание"
-    url = "/posts/"
-    weight = -100
+    identifier = "travel"
+    name = "travel"
+    url = "/tags/travel"
+    weight = -140
+  [[menu.main]]
+    identifier = "blog"
+    name = "blog"
+    url = "/posts"
+    weight = -130
 
 [markup]
   [markup.goldmark.renderer]

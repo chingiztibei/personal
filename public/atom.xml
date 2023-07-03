@@ -7,11 +7,80 @@
     
     <language>ru</language>
     <copyright>Copyright 2023, Chingiz Tibei</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
     <atom:link href="http://chingiztibei.com/atom.xml" rel="self" type="application/atom+xml"/>
     
+    
+    <item>
+      <title>Стамбул</title>
+      <link>http://chingiztibei.com/travel/istanbul/</link>
+      <description>&lt;div class=&#34;auto&#34;&gt;
+&lt;p&gt;Конспект города. Коротко о главном.&lt;/p&gt;
+&lt;h4 id=&#34;heading&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Стамбул подорожал.&lt;/p&gt;
+&lt;p&gt;Принимаешь как данность оплачивая за свою рыбу в три раза больше, чем привык. С таким ценником уже можно подбирать и другие страны для обитания.&lt;/p&gt;
+&lt;div class=&#34;masonry-container&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;Толпы блуждают туда-сюда, из района в район. Сбегаем в более отдаленные. Заново знакомимся, теперь уже в широком смысле. Заново отвыкаем мысленно переводить валюты.&lt;/p&gt;
+&lt;h4 id=&#34;heading-1&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Каждая составляющая Стамбула своеобразная. Если в прошлый раз нам инстинктивно недоставало Европы, то в этот мы осознанно остались в Азии. В этот раз она нам более по душе.&lt;/p&gt;
+&lt;h4 id=&#34;heading-2&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Карта с локациями по ссылке: &lt;a href=&#34;https://goo.gl/maps/dFwF1PAqkM1htHFU6&#34;&gt;https://goo.gl/maps/dFwF1PAqkM1htHFU6&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+const accessKey = &#39;EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M&#39;;
+const collectionID = &#39;NfeMXnZnCCM&#39;;
+const perPage = 30; // Set the number of photos to retrieve per page
+let currentPage = 1;
+let totalPages = 1;
+
+const grid = document.querySelector(&#39;.masonry-container&#39;);
+
+function fetchPhotos() {
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}&amp;per_page=${perPage}&amp;page=${currentPage}`)
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      // Append the photos to the grid
+      data.forEach(photo =&gt; {
+        const gridItem = document.createElement(&#39;div&#39;);
+        gridItem.classList.add(&#39;masonry-item&#39;);
+
+        const link = document.createElement(&#39;a&#39;);
+        link.href = photo.links.html;
+        link.target = &#39;_blank&#39;;
+        link.rel = &#39;noopener noreferrer&#39;;
+
+        const img = document.createElement(&#39;img&#39;);
+        img.src = photo.urls.regular;
+        img.alt = photo.alt_description;
+
+        link.appendChild(img);
+        gridItem.appendChild(link);
+        grid.appendChild(gridItem);
+      });
+
+      // Update pagination variables
+      totalPages = Math.ceil(data.total / perPage);
+      currentPage++;
+
+      // Fetch the next page of photos if there are more pages
+      if (currentPage &lt;= totalPages) {
+        fetchPhotos();
+      }
+    })
+    .catch(error =&gt; console.log(error));
+}
+
+fetchPhotos();
+
+&lt;/script&gt;
+</description>
+      <author>Чингиз Тибэй</author>
+      <guid>http://chingiztibei.com/travel/istanbul/</guid>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+    </item>
     
     <item>
       <title>Трэвел чеклист</title>
@@ -517,6 +586,25 @@
 &lt;p&gt;К пасхальным праздникам в музее Albertina в Вене придумали развлечение: раскидали по музею, в очевидных и не очень местах, символ праздника — кролика. Что-то «вшили» в интерьер через физические объекты, что-то сделали интерактивным и доступным по наведению камеры на картину.&lt;/p&gt;
 &lt;p&gt;Скачав у входа специальное приложение, к выходу ты можешь получить награду, если соберешь большинство таких пасхалок.&lt;/p&gt;
 &lt;p&gt;Некоторые обходили музей по несколько раз, чтобы найти их все.&lt;/p&gt;
+&lt;p&gt;Кстати, лайфхак: в музее «Альбертина» можно скинуть рюкзак с вещами в хранение, погулять налегке и вернуться за ним вечером. Музей работает до шести, а хранение бесплатное.&lt;/p&gt;
+&lt;h4 id=&#34;heading-4&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Вена на 80% состоит из музеев. Утрирую, конечно. Но средоточие музеев в центральном кольце превращает сам город в один большой музей. Превращает каждого в экспонат.&lt;/p&gt;
+&lt;h4 id=&#34;heading-5&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Заведения достойны города. Обслуживание достойно легенд. В ожидании меню, принятия заказа и самого заказа на мебели прямиком из театра прошлого века, состаришься сам. А по виду, тону и поведению официанта кажется, что он обслуживал самого Моцарта. Я бы не удивился, если бы это действительно было так.&lt;/p&gt;
+&lt;h4 id=&#34;heading-6&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Вена будто застыла во времени. Не так, что город остался в прошлом, но так, будто время здесь тоже не торопится. Совсем. По городу разъезжают конные экипажи, но при этом причудливо раскиданы сети кофеен «Старбакс». И нет никаких розеток. Но есть интернет.&lt;/p&gt;
+&lt;h4 id=&#34;heading-7&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Вена — город, в котором я завязал с веганством. Целый год без мяса в Казахстане — буквально, в окружении блюд из мяса, но сдался в Вене. Это должно много сказать о местных сосисках.&lt;/p&gt;
+&lt;h4 id=&#34;heading-8&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Локации и пароли:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;За мороженным — в Eis Greissler.&lt;/li&gt;
+&lt;li&gt;На выходе из Альбертины хвалят сосиски. Понравились Kraken, что в хлебе, что без. Главное, что с горчицей.&lt;/li&gt;
+&lt;li&gt;Cafe Sperl, Cafe Hawelka — супер мееееееедленное обслуживание, вкусные штрудели.&lt;/li&gt;
+&lt;li&gt;I Caruso работают итальянцы, говорят по-итальянски, готовят по-итальянски.&lt;/li&gt;
+&lt;li&gt;Кое-что из люксового — одежду, обувь и декор — можно урвать в Halfprice за половину или более от оригинальной стоимости.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Карта с локациями по ссылке: &lt;a href=&#34;https://goo.gl/maps/Uv3RzN4HDL5k7f8d6&#34;&gt;https://goo.gl/maps/Uv3RzN4HDL5k7f8d6&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;script&gt;
 const accessKey = &#39;EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M&#39;;
@@ -615,6 +703,38 @@ fetchPhotos();
 &lt;p&gt;В целом, сложилось впечатление, что каждый будапештец считает своим долгом изрисовать что-нибудь в городе. Но у большинства из них, к сожалению, отсутствует талант.&lt;/p&gt;
 &lt;h4 id=&#34;heading-12&#34;&gt;~~~&lt;/h4&gt;
 &lt;p&gt;Самый вкусный штрудель на автовокзале Будапешта.&lt;/p&gt;
+&lt;h4 id=&#34;heading-13&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;В тот самый момент, когда ты говоришь что-то осмысленное на местном языке, ты эволюционируешь из туриста в путешественника. В Венгрии такой трюк не удастся сделать быстро. Язык слишком не похож на другие, чтобы было от чего отталкиваться.&lt;/p&gt;
+&lt;p&gt;Единственное слово, что я выучил — köszönöm. Косюнум. Спасибо.&lt;/p&gt;
+&lt;h4 id=&#34;heading-14&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Однажды я уже был здесь. Город был темен, оккупирован бомжами и пах соответствующе. Фонари горели по ночам, но освещали только грязные стены в некрасивых граффити. Каждый день я видел на стене напротив одну большую надпись: BUDA FCKN PEST.&lt;/p&gt;
+&lt;p&gt;Эта надпись часто мне встречалась — на вывесках, упаковках пива, на стикерах на дорожных знаках и, конечно, стенах зданий.&lt;/p&gt;
+&lt;p&gt;Сегодня я приехал в город и поймал себя на мысли, что он стал чище. Светлее. Приятнее. Я поймал себя на мысли, что хотел бы здесь жить.&lt;/p&gt;
+&lt;p&gt;Я вдруг увидел — словно, прозрел — он красив настолько, что в один момент ты перестаешь его фотографировать. И начинаешь просто наслаждаться.&lt;/p&gt;
+&lt;p&gt;Я увидел что город отбросил свои страхи. Открылся миру. Он больше не боится, что его обидят, сделают больно, отвернутся.&lt;/p&gt;
+&lt;p&gt;Теперь город открыт каждому.&lt;/p&gt;
+&lt;p&gt;Будапешт кинематографичен. И, говорят, все чаще играет самого себя. Он перестал притворялся кем-то другим. Принял себя такого, какой он есть.&lt;/p&gt;
+&lt;p&gt;Я смотрю на стене напротив одну маленькую — размером с детскую ладонь — надпись: BUDA LOVING PEST.&lt;/p&gt;
+&lt;h4 id=&#34;heading-15&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Венгры любят закручивать сюжеты, калачи и лестницы.&lt;/p&gt;
+&lt;h4 id=&#34;heading-16&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Как горожане проводят выходные, пока туристы покоряют город? Например, танцуют в парке.&lt;/p&gt;
+&lt;p&gt;Или отмокают в термальных водах, играя в шахматы под открытым небом. Гуляют в парках с животными. Запускают бумажных змей на холме. Читают с ребенком книги в самой красивой из библиотек.&lt;/p&gt;
+&lt;h4 id=&#34;heading-17&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Косюнум, Будапешт!&lt;/p&gt;
+&lt;h4 id=&#34;heading-18&#34;&gt;~~~&lt;/h4&gt;
+&lt;p&gt;Рекомендации:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Осмотреть город с воды на водном трамвае&lt;/li&gt;
+&lt;li&gt;Устроить пикник на горе Нормафа&lt;/li&gt;
+&lt;li&gt;Посмотреть фильм Уэса Андерсона в аутентичном кинотеатре&lt;/li&gt;
+&lt;li&gt;Прокатиться на втором трамвае по живописному маршруту&lt;/li&gt;
+&lt;li&gt;Покорить Буду&lt;/li&gt;
+&lt;li&gt;Найти Иисуса, Будду и Ганди в «Саду философов»&lt;/li&gt;
+&lt;li&gt;Влюбиться в библиотеку Ирвина Сабо&lt;/li&gt;
+&lt;li&gt;Попробовать мороженное в калаче в Molnár&amp;rsquo;s kürtőskalács&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Карта с локациями по ссылке: &lt;a href=&#34;https://goo.gl/maps/TTYVrqMir7bqXRnr8&#34;&gt;https://goo.gl/maps/TTYVrqMir7bqXRnr8&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;script&gt;
 const accessKey = &#39;EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M&#39;;
@@ -797,33 +917,51 @@ fetchPhotos();
 &lt;p&gt;И да, #tbilisilovesyou&lt;/p&gt;
 &lt;/div&gt;
 &lt;script&gt;
-  const accessKey = &#39;EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M&#39;;
-  const collectionID = &#39;SN3Id-fTrDI&#39;;
+const accessKey = &#39;EMa6WdAQslS1R18qLqFmAqwJovIg5m5nS_-ZcjPQ63M&#39;;
+const collectionID = &#39;SN3Id-fTrDI&#39;;
+const perPage = 30; // Set the number of photos to retrieve per page
+let currentPage = 1;
+let totalPages = 1;
 
-  const grid = document.querySelector(&#39;.masonry-container&#39;);
+const grid = document.querySelector(&#39;.masonry-container&#39;);
 
-  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`)
-      .then(response =&gt; response.json())
-      .then(data =&gt; {
-          data.forEach(photo =&gt; {
-              const gridItem = document.createElement(&#39;div&#39;);
-              gridItem.classList.add(&#39;masonry-item&#39;);
+function fetchPhotos() {
+  fetch(`https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}&amp;per_page=${perPage}&amp;page=${currentPage}`)
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      // Append the photos to the grid
+      data.forEach(photo =&gt; {
+        const gridItem = document.createElement(&#39;div&#39;);
+        gridItem.classList.add(&#39;masonry-item&#39;);
 
-              const link = document.createElement(&#39;a&#39;);
-              link.href = photo.links.html;
-              link.target = &#39;_blank&#39;;
-              link.rel = &#39;noopener noreferrer&#39;;
+        const link = document.createElement(&#39;a&#39;);
+        link.href = photo.links.html;
+        link.target = &#39;_blank&#39;;
+        link.rel = &#39;noopener noreferrer&#39;;
 
-              const img = document.createElement(&#39;img&#39;);
-              img.src = photo.urls.regular;
-              img.alt = photo.alt_description;
+        const img = document.createElement(&#39;img&#39;);
+        img.src = photo.urls.regular;
+        img.alt = photo.alt_description;
 
-              link.appendChild(img);
-              gridItem.appendChild(link);
-              grid.appendChild(gridItem);
-          });
-      })
-      .catch(error =&gt; console.log(error));
+        link.appendChild(img);
+        gridItem.appendChild(link);
+        grid.appendChild(gridItem);
+      });
+
+      // Update pagination variables
+      totalPages = Math.ceil(data.total / perPage);
+      currentPage++;
+
+      // Fetch the next page of photos if there are more pages
+      if (currentPage &lt;= totalPages) {
+        fetchPhotos();
+      }
+    })
+    .catch(error =&gt; console.log(error));
+}
+
+fetchPhotos();
+
 &lt;/script&gt;</description>
       <author>Чингиз Тибэй</author>
       <guid>http://chingiztibei.com/travel/tbilisi/</guid>

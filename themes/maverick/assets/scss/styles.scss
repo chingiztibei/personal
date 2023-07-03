@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
     font-family: "Betmo";
     src:
@@ -13,21 +15,10 @@
 :root {
     --primary-color: #111;
     --secondary-color: #86868b;
-    --font-family: -apple-system,
-        BlinkMacSystemFont,
-        avenir next,
-        avenir,
-        helvetica,
-        helvetica neue,
-        ubuntu,
-        roboto,
-        noto,
-        segoe ui,
-        arial,
-        sans-serif;
+    --font-family: 'Inter', sans-serif;
     --font-title: "Betmo";
     --font-quote: "Alcotton";
-    --font-size: 16px;
+    --font-size: 18px;
 }
 
 ::selection {
@@ -52,10 +43,11 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     text-transform: uppercase;
     line-height: 3;
     font-size: .9em;
+    margin-bottom: 6em;
 }
 
 header a:hover {
@@ -67,12 +59,51 @@ header a::before {
 }
 
 header ul {
-    list-style-type: none;
-    padding: 0;
+    border-bottom: 1px dotted var(--secondary-color);
+    padding-bottom: .4em!important;
 }
 
 header li {
     margin-bottom: 0;
+    display: inline;
+    font-weight: 700;
+}
+
+header li::before {
+    content: '/'!important;
+    margin-left: .1em!important;
+}
+
+.big-title {
+    position: absolute;
+    top: -1.4em;
+    left: -.16em;
+    font-size: 16em;
+    font-weight: 900;
+    color: var(--secondary-color);
+    display: block;
+    max-height: 1.9em;
+    white-space: nowrap;
+}
+
+img.logo {
+    width: 2.4em;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+
+img.logo:hover {
+    color: var(--secondary-color);
+}
+
+section {
+    margin-top: 8em;
+}
+
+a.tag {
+    color: var(--secondary-color);
+    font-size: .9em;
+    font-style: italic;
 }
 
 h1 {
@@ -83,14 +114,13 @@ h2,
 h3,
 h4 {
     font-family: var(--font-title);
-    transform: rotate(-2deg);
     transform-origin: center;
     letter-spacing: 0px;
     line-height: .9;
 }
 
 h2 {
-    margin: 2em auto 1em;
+    margin: 1.2em auto 1em;
     max-width: 16ch;
     font-size: 4.2em;
     text-align: center;
@@ -104,8 +134,9 @@ h3 {
 
 h4 {
     margin: 1em auto 0;
-    font-size: 3.6em;
+    font-size: 3.2em;
     text-align: center;
+    letter-spacing: .1em;
 }
 
 p,
@@ -165,6 +196,14 @@ a.link {
 
 a.link::before {
     height: 0;
+}
+
+a.card-link::before {
+    height: 0;
+}
+
+a.card-link {
+    overflow: hidden;
 }
 
 a.link:hover {
@@ -269,14 +308,13 @@ strong {
 }
 
 .content {
-    max-width: 70ch;
+    max-width: 96vw;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr .75fr;
     grid-gap: 1em;
 }
 
@@ -317,7 +355,7 @@ img {
 
 .posts {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     overflow: hidden;
 }
 
@@ -331,31 +369,107 @@ img {
     opacity: 1;
 }
 
-.card {
-    display: block;
-    height: 100%;
-    overflow: hidden;
-    padding: .8em;
+.posts>a:first-child {
+    background-color: red;
+    display: none;
 }
 
-.card>p:first-of-type {
+.card {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+}
+
+.card {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.card.special, .card.nostyle {
+    border-bottom: 0;
+}
+
+.card:hover {
+    background-color: #dfdfdf;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100em;
+}
+
+.card-content>span:first-of-type {
+    z-index: 99;
+}
+
+.card-content .text {
+    font-size: 1em;
+    line-height: 1.25;
+    font-weight: 700;
+    display: block;
+}
+
+.special .text {
+    font-size: 3.2em;
+    line-height: 1.25;
+    font-weight: 700;
+    display: inline;
+}
+
+.card-content .date {
+    font-size: .8em;
+    font-weight: 400;
+    display: block;
     text-transform: uppercase;
 }
 
-.posts> :nth-of-type(1),
-.posts.index> :nth-of-type(1) {
-    border-right: 1px dotted var(--secondary-color);
-    margin-right: 1em;
+.special .date {
+    font-size: 1em;
+    font-weight: 500;
+    display: inline;
+    margin-left: 1em;
 }
 
-.posts> :last-child {
-    border-right: 0;
-    margin-right: 0;
+.card-content .image {
+    width: 10em;
 }
 
-.posts> :not(:last-child):nth-of-type(2) {
-    border-right: 1px dotted var(--secondary-color);
-    margin-right: 1em;
+.card.special .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card.special:hover {
+    opacity: .6;
+}
+
+.card.special .image img {
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index:1;
+}
+
+.special .tag {
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 900;
+    rotate: 180deg;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    position: absolute;
+    right: -.4em;
+    bottom: 0;
+    color: #f5f5f5;
 }
 
 .left {
@@ -372,7 +486,7 @@ img {
 }
 
 .auto p {
-    max-width: 48ch;
+    max-width: 100%;
     margin: auto;
     margin-bottom: .8em;
 }
@@ -434,38 +548,38 @@ img {
         flex-direction: row;
     }
 
-    .posts> :nth-of-type(1) {
-        border-right: none;
-        margin-right: 0;
-        border-bottom: 1px dotted var(--secondary-color);
-        margin-bottom: 1em;
-    }
+    // .posts> :nth-of-type(1) {
+    //     border-right: none;
+    //     margin-right: 0;
+    //     border-bottom: 1px dotted var(--secondary-color);
+    //     margin-bottom: 1em;
+    // }
 
-    .posts> :nth-of-type(2) {
-        border-right: none;
-        margin-right: 0;
-        border-bottom: 1px dotted var(--secondary-color);
-        margin-bottom: 1em;
-    }
+    // .posts> :nth-of-type(2) {
+    //     border-right: none;
+    //     margin-right: 0;
+    //     border-bottom: 1px dotted var(--secondary-color);
+    //     margin-bottom: 1em;
+    // }
 
-    .posts.index> :nth-of-type(1) {
-        border-right: 1px dotted var(--secondary-color);
-        margin-right: 1em;
-        border-bottom: none;
-        margin-bottom: 0;
-    }
+    // .posts.index> :nth-of-type(1) {
+    //     border-right: 1px dotted var(--secondary-color);
+    //     margin-right: 1em;
+    //     border-bottom: none;
+    //     margin-bottom: 0;
+    // }
 
-    .posts.index> :nth-of-type(2) {
-        border-right: 0;
-        margin-right: 0;
-        border-bottom: 0;
-        margin-bottom: 0;
-    }
+    // .posts.index> :nth-of-type(2) {
+    //     border-right: 0;
+    //     margin-right: 0;
+    //     border-bottom: 0;
+    //     margin-bottom: 0;
+    // }
 
-    .posts> :not(:last-child):nth-of-type(2) {
-        border-right: 0;
-        margin-right: 0;
-    }
+    // .posts> :not(:last-child):nth-of-type(2) {
+    //     border-right: 0;
+    //     margin-right: 0;
+    // }
 
     .hidden-sm {
         display: none;
@@ -502,6 +616,50 @@ img {
     .columns div {
         padding: 0;
     }
+
+    .big-title {
+        position: absolute;
+        top: -1em;
+        left: -2.9em;
+        font-size: 6em;
+        font-weight: 900;
+        color: var(--secondary-color);
+        white-space: nowrap;
+    }
+    header {
+        margin-bottom: 3em;
+    }
+    section {
+        margin-top: 4em;
+    }
+
+    .special .card-content {
+        min-height: 320px;
+        padding: 1em;
+    }
+    .special .text {
+        font-size: 2em;
+        line-height: 1.25;
+        font-weight: 700;
+        display: inline;
+        z-index: 99;
+        }
+    .special .tag {
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: 900;
+        rotate: 180deg;
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        position: absolute;
+        right: -.4em;
+        bottom: 0;
+        color: #f5f5f5;
+        z-index: 98;
+        }
+        .card .card-content {
+            padding: 1em;
+        }
 }
 
 @media (min-width: 507px) and (max-width: 1023px) {
@@ -510,6 +668,9 @@ img {
         -moz-column-count: 2;
         column-count: 2;
     }
+    .auto p {
+        max-width: 80%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -517,5 +678,8 @@ img {
         -webkit-column-count: 3;
         -moz-column-count: 3;
         column-count: 3;
+    }
+    .auto p {
+        max-width: 48%;
     }
 }

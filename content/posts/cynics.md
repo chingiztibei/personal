@@ -2,6 +2,7 @@
 title: "Циники"
 description: "Роман, в котором главы короче постов в твиттере"
 author: "Чингиз Тибэй"
+featured_image: /images/cynics/cynics.png
 url: /books/cynics
 date: "2022-09-11"
 tags: 

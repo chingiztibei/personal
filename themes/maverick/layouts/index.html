@@ -5,28 +5,81 @@
   <main id="main">
     <div class="content">
       {{ partial "header.html" . }}
-      <div style="margin-top: 6em"></div>
-      {{ .Content }}
-      {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
-      <h3>Последние записи</h3>
       <section>
-        <div class="posts">
-          {{ range first 3 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
-          <a href="{{ .Permalink }}">
+        {{ .Content }}
+    
+        {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
+      
+        <div class="columns">
+          {{ range first 1 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+
+          <a href="{{ .Permalink }}" class="card-link">
+            <div class="card special">
+              <div class="card-content">
+                <span>
+                  <span class="text">{{ .Title }}</span>
+                  <span class="date">
+                    <!-- Tags -->
+                    <span class="tag">
+                      {{ $taxonomy := "tags" }} 
+                        {{ with .Param $taxonomy }} 
+                          {{ range $index, $tag := . }} 
+                            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                              #{{ $tag | humanize }}
+                          {{- end -}} 
+                        {{- end -}} 
+                      {{ end }}
+                    </span>
+                  </span>
+                  <!-- Date -->
+                  / {{ .Date.Format "01.06" }}</span>
+                  <span class="image">
+                    {{ with .Params.featured_image}}
+                      <img src="{{ . }}">
+                    {{ end }}
+                  </span>
+              </div>
+            </div>
+          </a>
+
+          {{ end }}
+
+          <div class="posts">
+          
+          {{ range first 4 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+
+          <a href="{{ .Permalink }}" class="card-link">
             <div class="card">
-              <p>{{ .Title }}</p>
-              <p class="small">{{ .Date.Format "01.06" }} {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }} {{ range
-                $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
-                $taxonomy $tag) -}}
-                <i>#{{ $tag | humanize }}</i>
-                {{- end -}} {{- end -}} {{ end }}
-              </p>
-              <p>{{ .Description }}</p>
+              <div class="card-content">
+                  <span>
+                    <span class="text">{{ .Title }}</span>
+                    <span class="date">
+                      <!-- Tags -->
+                      {{ $taxonomy := "tags" }} 
+                        {{ with .Param $taxonomy }} 
+                          {{ range $index, $tag := . }} 
+                            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                              #{{ $tag | humanize }}
+                          {{- end -}} 
+                        {{- end -}} 
+                      {{ end }}
+                      <!-- Date -->
+                      · {{ .Date.Format "01.06" }}</span>
+                  </span>
+                  <span class="image">
+                    {{ with .Params.featured_image}}
+                      <img src="{{ . }}">
+                    {{ end }}
+                  </span>
+              </div>
             </div>
           </a>
           {{ end }}
+          <a href="/posts/" class="card-link">
+            <div class="card nostyle" style="padding-left: 2em;">Все записи</div>
+          </a>
+          </div>
         </div>
-        <div class="all"><a href="/posts/">Все записи</a></div>
       </section>
       {{ end }}
     </div>
