@@ -6,17 +6,39 @@
   <div class="content">
     {{ partial "header.html" . }}
     <section>
-      <ul reversed class="list">
-        {{ range .Pages }}
-          <li>
-            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}
-            </a>
-            <hr>
-            <time class="g time" datetime="{{ dateFormat " 2006-01-02" .Date }}">{{ dateFormat "02.01.06" .Date
-            }}</time>
-          </li>
-          {{ end }}
-      </ul>
+<div class="auto">
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" title="{{ .Title }}" class="card-link">
+        <div class="card" style="max-width: 640px;
+        margin: auto;">
+          <div class="card-content">
+              <span style="padding: 1em;">
+                <span class="text">{{ .Title }}</span>
+                <span class="description">{{ .Description }}</span>
+                <span class="date">
+                  <!-- Tags -->
+                  {{ $taxonomy := "tags" }} 
+                    {{ with .Param $taxonomy }} 
+                      {{ range $index, $tag := . }} 
+                        {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                          #{{ $tag | humanize }}
+                      {{- end -}} 
+                    {{- end -}} 
+                  {{ end }}
+                  <!-- Date -->
+                  · {{ .Date.Format "01.06" }}</span>
+              </span>
+              <span style="max-width: 48%;
+              padding: 1em;">
+                {{ with .Params.featured_image}}
+                  <img src="{{ . }}">
+                {{ end }}
+              </span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
     </section>
   </div>
   {{ partial "footer.html" . }}

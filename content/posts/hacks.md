@@ -1,7 +1,8 @@
 ---
 title: "Практические советы для цифровых кочевников"
-description: "Практические советы. Основано на реальных событиях."
+description: "Основано на реальных событиях."
 author: "Чингиз Тибэй"
+featured_image: https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80
 url: /travel/hacks
 date: "2022-07-07"
 tags:

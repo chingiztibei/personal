@@ -23,24 +23,20 @@
             .Lastmod | humanize }} {{- end }}
           </div>
 
+          <div class="auto">
+            {{ $related := .Site.RegularPages.Related . | last 3 }}
+              {{ with $related }}
+              <h3>См. также</h3>
+              <ul>
+                {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+
         </section>
 
-        <!-- <div class="posts index">
-          {{ if .Prev }}
-          <a href="{{ .Prev.Permalink }}">
-            <div class="card left">
-              <span class="hidden-sm">←</span> {{ .Prev.Title }}
-            </div>
-          </a>
-          {{ end }} {{ if .Next }}
-          <a href="{{ .Next.Permalink }}">
-            <div class="card right">
-              {{ .Next.Title }} <span class="hidden-sm">→</span>
-            </div>
-          </a>
-          {{ end }}
-        </div> -->
-        <div class="all mute"><a href="/posts/">Все записи</a></div>
         {{ end }}
       </div>
       {{ partial "footer.html" . }}
